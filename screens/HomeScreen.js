@@ -35,13 +35,13 @@ const HomeScreen = () => {
                     <Input
                         placeholder="Enter Flight Number"
                         leftIcon={{ type: 'font-awesome-5', name: 'plane',  color: '#5A409B' }}
-                        leftIconContainerStyle={{ paddingRight: 20 }}
+                        leftIconContainerStyle={{ paddingRight: 18 }}
                         onChangeText={value => setName(value)}
                     />
                     <Input
                         placeholder="Date of Journey"
                         leftIcon={{ type: 'font-awesome-5', name: 'calendar-day',  color: '#5A409B' }}
-                        leftIconContainerStyle={{ paddingRight: 20 }}
+                        leftIconContainerStyle={{ paddingRight: 25 }}
                         onChangeText={value => setName(value)}
                     />
                 <TouchableOpacity style={styles.submitContainer}>
