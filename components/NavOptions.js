@@ -2,23 +2,24 @@ import React from 'react'
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { SliderBox } from "react-native-image-slider-box";
 
+
 const NavOptions = () => {
     const images= [
-        require('../assets/slide1.jpg'),
-        require('../assets/slide2.jpg'),
-        require('../assets/slide3.jpg'),
+        require('../assets/people1.png'),
+        require('../assets/covid1.png'),
+        require('../assets/happy1.png'),
       ];
     return (
         <View style={styles.container}>
-                <SliderBox 
+            {/* <Image style={styles.image} source={images[2]}></Image> */}
+            <SliderBox 
                 images={images} 
                 dotColor="#BA3958"
                 inactiveDotColor ="#90A4AE"
                 autoplay
-                paginationBoxVerticalPadding={20}
-                resizeMethod={'resize'}
-                resizeMode={'cover'}
-                ImageComponentStyle={{borderRadius: 15, width: '97%', marginTop: 5, marginLeft: -7}}
+                onCurrentImagePressed={index => console.log(`image ${index} pressed`)}
+                paginationBoxVerticalPadding={-35}
+                ImageComponentStyle={{ width: '100%',marginBottom: 30, marginLeft:7, resizeMode: 'contain', }}
                 activeOpacity={0.9}
                 sliderBoxHeight={280}/>
         </View>
@@ -34,5 +35,13 @@ const styles = StyleSheet.create({
     container:{
         height: '40%',
         width: '100%',
+        top: -10,
+        marginLeft:-4,
+
+    },
+    image:{
+        height: '100%',
+        width: '100%',
+        
     }
 })
