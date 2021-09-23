@@ -9,7 +9,9 @@ import 'react-native-gesture-handler'
 import { createStackNavigator } from '@react-navigation/stack';
 import MapScreens from './screens/MapScreens';
 
+
 export default function App() {
+
   const Stack = createStackNavigator();
   return (
     <Provider store={store}>

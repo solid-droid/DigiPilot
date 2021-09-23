@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import Constants from "expo-constants"
-import tw from 'tailwind-react-native-classnames';
+import tw from 'tailwind-react-native-classnames'; 
 
 const MapScreens = () => {
     return (
