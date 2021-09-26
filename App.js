@@ -1,18 +1,29 @@
-import React from 'react';
-import { StyleSheet, KeyboardAvoidingView } from 'react-native';
+import React, { useEffect } from 'react';
+import { StyleSheet} from 'react-native';
+
 import { Provider } from 'react-redux';
-import HomeScreen from './screens/HomeScreen';
-import { store } from './store';
+import store from './redux/store';
+
+
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import { NavigationContainer } from '@react-navigation/native';
 import 'react-native-gesture-handler'
 import { createStackNavigator } from '@react-navigation/stack';
-import MapScreens from './screens/MapScreens';
 
+import MapScreens from './screens/MapScreens';
+import HomeScreen from './screens/HomeScreen';
+import NavigateScreen from './screens/NavigateScreen';
+import { initSearch, addAllItems } from './services/search';
 
 export default function App() {
 
   const Stack = createStackNavigator();
+
+  useEffect(() => {
+    initSearch();
+    addAllItems();
+  }, []);
+
   return (
     <Provider store={store}>
       <NavigationContainer>
@@ -28,6 +39,13 @@ export default function App() {
             <Stack.Screen
               name="Map" 
               component={MapScreens} 
+              options={{
+                headerShown: false,
+              }}
+            />
+            <Stack.Screen
+              name="Nav" 
+              component={NavigateScreen} 
               options={{
                 headerShown: false,
               }}
