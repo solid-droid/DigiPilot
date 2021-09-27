@@ -24,7 +24,7 @@ const Navigation = ({goToComponent}) => {
             </TouchableOpacity>
             }
             <WebView 
-                source={{ uri: 'https://solid-droid.github.io/Digital-Twin' }}
+                source={{ uri: 'https://solid-droid.github.io/Simple3D' }}
                 style={styles.WebViewContainer}
                 onLoadEnd={() => setWebViewLoaded(true)}
             />
