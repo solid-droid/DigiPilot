@@ -7,7 +7,7 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import OrderOnline from './OrderOnline';
 
 windowHeight = Dimensions.get('window').height;
-const Navigation = ({goToComponent}) => {
+const Navigation = ({goToComponent, item}) => {
     const [webViewLoaded, setWebViewLoaded] = React.useState(false);
     const [visible, setVisible] = React.useState(false);
 
@@ -29,7 +29,7 @@ const Navigation = ({goToComponent}) => {
                 onLoadEnd={() => setWebViewLoaded(true)}
             />
             <Overlay isVisible={visible} onBackdropPress={()=>setVisible(!visible)}>
-                <OrderOnline />
+                <OrderOnline item={item}/>
             </Overlay>
         </View>
     )

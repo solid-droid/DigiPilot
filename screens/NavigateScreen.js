@@ -48,7 +48,7 @@ const NavigateScreen = ({navigation, route}) => {
                         <TicketMini/>
                     </TouchableOpacity>
                     <View style={styles.navigatior}>
-                        <Navigation goToComponent= {goToComponent()}/>
+                        <Navigation goToComponent= {goToComponent()} item={item}/>
                     </View>
                 </View>
             </View>
